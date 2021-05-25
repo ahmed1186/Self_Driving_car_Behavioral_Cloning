@@ -31,9 +31,8 @@ steering_angles=[]
 # brake=[]
 # speed=[]
 count=0
-DRIVING_LOG_FILE = './data/driving_log.csv'
-with DRIVING_LOG_FILE as csvfile:
-  reader = pd.read_csv(csvfile)
+with open('data/driving_log.csv') as csvfile:
+  reader = csv.reader(csvfile)
   for line in reader:
     print(line)
     steering_center = float(line[3])
