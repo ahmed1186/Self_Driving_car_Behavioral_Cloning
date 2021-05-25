@@ -19,6 +19,10 @@ from keras.layers import Cropping2D
 
 keras.__version__
 
+img = plt.imread('/data/IMG/center_2016_12_01_13_30_48_287.jpg')
+plt.imshow(img)
+plt.show()
+
 import csv
 from PIL import Image
 car_images=[]
