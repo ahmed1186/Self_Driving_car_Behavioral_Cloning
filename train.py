@@ -35,10 +35,10 @@ with open('data/driving_log.csv') as csvfile:
   reader = csv.reader(csvfile)
   for row in reader:
     #print(row[0])
-    steering_center = float(row[3])
-    correction=0.2
-    steering_left = steering_center + correction
-    steering_right = steering_center - correction
+      steering_center = float(row[3])
+      correction=0.2
+      steering_left = steering_center + correction
+      steering_right = steering_center - correction
 
     img_path = './data/IMG/'
     line_0 = line[0].split('\\')[-1]
