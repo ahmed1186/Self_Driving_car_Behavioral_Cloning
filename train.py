@@ -265,9 +265,6 @@ model.compile(optimizer='adam', loss='mse')
 
 
 #from keras.models import load_model #Use this for keras 2.4
-from tensorflow.keras.models import load_model
-model = load_model('final_model.h5')
-model.summary()
 
 # from keras.callbacks import ModelCheckpoint
 
