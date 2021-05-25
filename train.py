@@ -128,21 +128,8 @@ def next_batch(batch_size,shuffle=True):
 # print(X_eval.shape)
 # print(X_test.shape)
 
-from sklearn.model_selection import train_test_split
-X_train,X_test,Y_train,Y_test = train_test_split(car_images,steering_angles,test_size=0.33,random_state=42)
-
-img_size = X_train[0].shape
-print(img_size)
-
-del(car_images[:])
-del(steering_angles[:])
-
 #del car_images,steering_angles,throttle,brake,speed
 #del car_images,steering_angles  Didnt clear much
-
-
-
-del X_test[:],Y_test[:]
 
 # import random
 # import csv
