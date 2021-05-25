@@ -35,7 +35,7 @@ with open('./data/driving_log.csv') as csvfile:
   reader = csv.reader(csvfile)
   for line in reader:
       #print(line)
-      if line:
+      if len(line) > 2:
         steering_center = float(line[3])
         correction=0.2
         steering_left = steering_center + correction
