@@ -27,30 +27,6 @@ import csv
 from PIL import Image
 car_images=[]
 steering_angles=[]
-# throttle=[]
-# brake=[]
-# speed=[]
-    # throttle.append(line[4])
-    # throttle.append(line[4])
-    # throttle.append(line[4])
-
-    # brake.append(line[5])
-    # brake.append(line[5])
-    # brake.append(line[5])
-    
-    # speed.append(line[6])
-    # speed.append(line[6])
-    # speed.append(line[6])
-    
-
-
-#print(len(car_images))
-#print(len(steering_angles))
-
-
-# print(len(throttle))
-# print(len(brake))
-# print(len(speed))
 
 def next_batch(batch_size,shuffle=True):
   arr = np.arrange(0,49158)
@@ -218,6 +194,15 @@ def next_batch(batch_size,shuffle=True):
 #!pip install tensorflow==1.3.0
 #!pip install tensorflow-gpu==1.3.0
 
+from sklearn.model_selection import train_test_split
+X_train,X_test,Y_train,Y_test = train_test_split(car_images,steering_angles,test_size=0.33,random_state=42)
+
+img_size = X_train[0].shape
+print(img_size)
+
+del(car_images[:])
+del(steering_angles[:])
+
 from keras.layers import Dropout  #Remove for keras version 2.4
 model  = Sequential()
 
@@ -370,19 +355,6 @@ with open('/data/driving_log.csv') as csvfile:
 
     del img_center,img_left,img_right,line_0,line_1,line_2,steering_center,steering_left,steering_right
     
-
-
-    # throttle.append(line[4])
-    # throttle.append(line[4])
-    # throttle.append(line[4])
-
-    # brake.append(line[5])
-    # brake.append(line[5])
-    # brake.append(line[5])
-    
-    # speed.append(line[6])
-    # speed.append(line[6])
-    # speed.append(line[6])
     
 
 
