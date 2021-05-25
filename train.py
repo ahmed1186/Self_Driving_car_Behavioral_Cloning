@@ -34,34 +34,34 @@ count=0
 with open('data/driving_log.csv') as csvfile:
   reader = csv.reader(csvfile)
   for line in reader:
-      print(line)
+      #print(line)
       steering_center = float(line[3])
       correction=0.2
       steering_left = steering_center + correction
       steering_right = steering_center - correction
 
-    img_path = './data/IMG/'
-    line_0 = line[0].split('\\')[-1]
-    line_1 = line[1].split('\\')[-1]
-    line_2 = line[2].split('\\')[-1]
-    img_center = np.asarray(Image.open(img_path + line_0))
-    img_left = np.asarray(Image.open(img_path + line_1))
-    img_right = np.asarray(Image.open(img_path + line_2))
+      img_path = './data/IMG/'
+      line_0 = line[0].split('\\')[-1]
+      line_1 = line[1].split('\\')[-1]
+      line_2 = line[2].split('\\')[-1]
+      img_center = np.asarray(Image.open(img_path + line_0))
+      img_left = np.asarray(Image.open(img_path + line_1))
+      img_right = np.asarray(Image.open(img_path + line_2))
 
-    car_images.append(img_center)
-    steering_angles.append(steering_center)
+      car_images.append(img_center)
+      steering_angles.append(steering_center)
 
-    
-    car_images.append(img_left)
-    steering_angles.append(steering_left)
 
-    
-    car_images.append(img_right)
-    steering_angles.append(steering_right)
+      car_images.append(img_left)
+      steering_angles.append(steering_left)
 
-    
 
-    del img_center,img_left,img_right,line_0,line_1,line_2,steering_center,steering_left,steering_right
+      car_images.append(img_right)
+      steering_angles.append(steering_right)
+
+
+
+      del img_center,img_left,img_right,line_0,line_1,line_2,steering_center,steering_left,steering_right
     
 
 
