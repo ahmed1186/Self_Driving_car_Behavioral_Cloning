@@ -33,9 +33,9 @@ steering_angles=[]
 count=0
 with open('data/driving_log.csv') as csvfile:
   reader = csv.reader(csvfile)
-  for line in reader:
-    print(line)
-    steering_center = float(line[3])
+  for row in reader:
+    #print(line)
+    steering_center = float(row[3])
     correction=0.2
     steering_left = steering_center + correction
     steering_right = steering_center - correction
